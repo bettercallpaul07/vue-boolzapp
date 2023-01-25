@@ -24,7 +24,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
 
-    <body>
+    <body id="app">
         <div class="main-container mt-4">
             <div class="side-container col-4">
                 <div class="header-side">
@@ -38,7 +38,7 @@
                         <button><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></button>
                     </div>
                 </div>
-                <div class="notification-side d-flex align-items-center ps-2">
+                <div class="notification-side d-flex align-items-center">
                     <div class="circle">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
@@ -60,6 +60,17 @@
 
                     </div>
                     <div class="chat-list">
+                        <ul>
+                            <li class="contact" v-for="contact in contacts">
+                                <img class="pic" :src="'img/avatar' + contact.avatar + '.jpg'">
+                                <div class="text-box">
+                                    <p class="name">{{contact.name}}</p>
+                                    <p class="text">Ultimo messaggio inviato</p>
+                                    <span>{{contact.messages.date}}</span>
+                                </div>
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -91,7 +102,16 @@
 
 
                 </div>
-                <div class="control-chat"></div>
+                <div class="control-chat">
+                    <button>
+                        <i class="fa-regular fa-face-smile fa-xl"></i>
+                    </button>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <button>
+                        <i class="fa-solid fa-microphone fa-xl"></i>
+                    </button>
+
+                </div>
 
                 
             </div>
@@ -99,10 +119,11 @@
         </div>
 
         
+ 
     </body>
 
-
     <!-- Collego il file JS -->
-	<script src="js/scripts.js"></script>        
+	<script src="js/scripts.js"></script>       
+
 
 </html>

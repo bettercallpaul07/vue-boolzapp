@@ -1,9 +1,10 @@
-* {
+/* GENERALE */
+
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  
 
 
 body {
@@ -17,42 +18,32 @@ body {
 }
 
 
-
-
 .main-container {
-    height: 85%;
+    height: 80%;
     width: 80%;
     margin: 0 auto;
     display: flex;
-    border: 1px solid red;
 }
 
 .side-container {
     background-color: white;
 }
 
-.chat-container {
-
-    border: 1px solid;
-
-}
 
 .header-chat {
-    height: 7%;
+    height: 10%;
     width: 100%;
     background-color: lightgray;
-    border: 1px solid;
 }
 
 .control-chat {
-    height: 7%;
+    height: 10%;
     width: 100%;
-    border: 1px solid;
     background-color: lightgray;
 }
 
 .header-side {
-    height: 7%;
+    height: 10%;
     width: 100%;
     background-color: lightgray;
     display: flex;
@@ -62,14 +53,18 @@ body {
 
 .notification-side {
     background-color: lightblue;
-    height: 7%;
+    height: 10%;
     width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+
 }
 
 
 .main-chat {
 
-    height: 86%;
+    height: 80%;
     width: 100%;
 
     padding: 2em;
@@ -107,14 +102,11 @@ body {
 }
 
 
-.notification-box {
-
-}
 
 /* .main-chat .message .date {
     position:absolute;
-    right: 0.5rem;
-    bottom: 0.5rem
+    right: 0.5em;
+    bottom: 0.5em
 } */
 
 .user {
@@ -159,10 +151,8 @@ body {
 
 button {
     background: none;
-	color: inherit;
 	border: none;
 	padding: 0;
-	font: inherit;
 	cursor: pointer;
 }
 
@@ -175,15 +165,85 @@ button {
     line-height: 3em;
     border-radius: 50%;
     text-align: center;
-    color: blue;
+    color: lightblue;
 }
 
 .chat-side .search-box {
-    padding: 0.5rem;
+    padding: 1em;
 }
 
 .chat-side .search-box .search-container {
     background-color: white;
     display: flex;
     align-items: center;
+    border: 1px solid lightgray;
+    padding: 0.5em;
+}
+
+.chat-side .search-container input {
+    padding: 0.5em 0.5em;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+
+.control-chat {
+    padding: 0.5em 0.5em;
+    background-color: #f3eeea;
+    display: flex;
+}
+
+.control-chat input {
+    flex-grow: 1;
+    align-items: center;
+
+}
+
+.control-chat button {
+    margin-right: 2em;
+    margin-left: 2em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+
+}
+
+
+.chat-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-list {
+    list-style: none;
+}
+
+.contact {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+}
+
+.contact .text-box {
+    width: 100%;
+}
+
+.contact .text-box .name {
+    font-weight: bold;
+}
+
+.contact .text-box .text {
+    color: lightgray;
+    padding-top: 0.5em;
+    font-size: 0.8em;
+}
+
+.pic {
+        margin-right: 1em;
+        width: 3em;
+        border-radius: 50%;
+        display: block;
 }

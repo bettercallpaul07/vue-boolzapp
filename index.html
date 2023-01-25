@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Boolzapp</title>
+
+        <!-- Importo Bootstrap -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+    
+        <!-- Importo Google Font e Roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+        
+        <!-- Collego il file css -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Importo Vue.js -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+
+    <body>
+        <div class="main-container mt-4">
+            <div class="side-container col-4">
+                <div class="header-side"></div>
+                <div class="notification-side"></div>
+                <div class="chat-side"></div>
+
+
+
+
+            </div>
+            <div class="chat-container col-8">
+                <div class="header-chat"></div>
+                <div class="main-chat p-4 d-flex flex-column">
+                    <div class="container-dx">
+                        <div class="message-in">
+                            <p>IN</p>
+                        </div>
+                    </div>
+
+                    <div class="container-sx">
+                        <div class="message-out">
+                            <p>OUT</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="control-chat"></div>
+
+                
+            </div>
+    
+        </div>
+
+        
+    </body>
+
+
+    <!-- Collego il file JS -->
+	<script src="js/scripts.js"></script>        
+
+</html>

@@ -14,6 +14,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         
+        <!-- Collego FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
         <!-- Collego il file css -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -24,28 +27,66 @@
     <body>
         <div class="main-container mt-4">
             <div class="side-container col-4">
-                <div class="header-side"></div>
-                <div class="notification-side"></div>
-                <div class="chat-side"></div>
+                <div class="header-side">
+                    <div class="user">
+                        <img src="img/avatar_2.jpg" alt="User">
+                        <span class="utext">Paolo</span>
+                    </div>
+                    <div class="button-box">
+                        <button><i class="fa-solid fa-circle-notch fa-xl"></i></button>
+                        <button><i class="fa-solid fa-message fa-xl"></i></button>
+                        <button><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></button>
+                    </div>
+                </div>
+                <div class="notification-side d-flex align-items-center ps-2">
+                    <div class="circle">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="notification-box d-flex flex-column justify-content-center ps-2">
+                        <p class="bold-text pb-1">Ricevi notifiche di nuovi messaggi</p>
+                        <p>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </p>
+                    </div>
+            
+                </div>
+                <div class="chat-side">
+                    <div class="search-box">
+                        <div class="search-container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+
+
+                    </div>
+                    <div class="chat-list">
+                    </div>
+                </div>
 
 
 
 
             </div>
             <div class="chat-container col-8">
-                <div class="header-chat"></div>
-                <div class="main-chat p-4 d-flex flex-column">
-                    <div class="container-dx">
-                        <div class="message-in">
-                            <p>IN</p>
+                <div class="header-chat d-flex">
+                    <div class="user">
+                        <img src="img/avatar_6.jpg" alt="User">
+                        <div>
+                            <div class="utext">Valeria</div>
+                            <div class="lastaccess">Ultimo accesso oggi alle 15:00</div>
                         </div>
-                    </div>
 
-                    <div class="container-sx">
-                        <div class="message-out">
-                            <p>OUT</p>
-                        </div>
                     </div>
+                </div>
+                <div class="main-chat p-4">
+                    <div class="message sent">
+                        <p>Provaaaaaaaaaaaa</p>
+                    </div>
+                    <div class="message received">
+                        <p>Olè
+                        </p>
+                    </div>
+               
 
 
 

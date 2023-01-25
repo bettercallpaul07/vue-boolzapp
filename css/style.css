@@ -38,79 +38,152 @@ body {
 }
 
 .header-chat {
-    height: 10%;
+    height: 7%;
     width: 100%;
     background-color: lightgray;
     border: 1px solid;
 }
 
-.main-chat {
-    height: 80%;
-    width: 100%;
-    background-image: url("../img/mine.jpg");
-}
-
 .control-chat {
-    height: 10%;
+    height: 7%;
     width: 100%;
     border: 1px solid;
     background-color: lightgray;
 }
 
 .header-side {
-    height: 10%;
+    height: 7%;
     width: 100%;
     background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .notification-side {
     background-color: lightblue;
-    height: 10%;
+    height: 7%;
     width: 100%;
 }
+
 
 .main-chat {
-    height: 80%;
+
+    height: 86%;
     width: 100%;
 
+    padding: 2em;
+    background-image: url('../img/mine.jpg');
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+
+    overflow-y: auto;
 }
 
-.message-in {
-    width: 100%;
-    height: 120px;
+.main-chat .message {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    max-width: 60%;
     text-align: right;
+    border-radius: 10px;
+    position: relative;
+}
 
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    border-radius: 0.5em;
-
-    padding: 1em;
-    background-color: lightgreen;
-
-    width: 50%;
-
+.main-chat .sent {
+    background-color: #d5f9ba;
     align-self: flex-end;
-
 }
 
-
-.container-dx {
-    text-align: right
-}
-
-.message-out {
-    width: 100%;
-    height: 120px;
-    text-align: left;
-
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    border-radius: 0.5em;
-
-    padding: 1em;
+.main-chat .received {
     background-color: white;
 
-    width: 50%;
+}
 
-    align-self: flex-start;
+.bold-text {
+    font-weight: bold;
+}
+
+
+.notification-box {
+
+}
+
+/* .main-chat .message .date {
+    position:absolute;
+    right: 0.5rem;
+    bottom: 0.5rem
+} */
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.header-side img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.header-chat .user img {
+    width: 30%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.utext {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.lastaccess {
+    padding-top: 0.3em;
+    font-size: 0.7em;
+    color: gray;
+}
+
+.button-box {
+    display: flex;
+}
+
+.button-box i {
+    color: gray;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+
+
+.circle {
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    color: blue;
+}
+
+.chat-side .search-box {
+    padding: 0.5rem;
+}
+
+.chat-side .search-box .search-container {
+    background-color: white;
+    display: flex;
+    align-items: center;
 }

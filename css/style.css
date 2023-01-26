@@ -17,7 +17,6 @@ body {
     align-items: center;
 }
 
-
 .main-container {
     height: 80%;
     width: 80%;
@@ -25,21 +24,10 @@ body {
     display: flex;
 }
 
+/* LATERAL SIDE */
+
 .side-container {
     background-color: white;
-}
-
-
-.header-chat {
-    height: 10%;
-    width: 100%;
-    background-color: lightgray;
-}
-
-.control-chat {
-    height: 10%;
-    width: 100%;
-    background-color: lightgray;
 }
 
 .header-side {
@@ -62,19 +50,31 @@ body {
 }
 
 
-.main-chat {
+/* CHAT SIDE */
 
+
+.header-chat {
+    height: 10%;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.control-chat {
+    height: 10%;
+    width: 100%;
+    background-color: lightgray;
+}
+
+
+.main-chat {
     height: 80%;
     width: 100%;
-
     padding: 2em;
     background-image: url('../img/mine.jpg');
-    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-grow: 1;
-
     overflow-y: auto;
 }
 
@@ -94,20 +94,21 @@ body {
 
 .main-chat .received {
     background-color: white;
-
-}
-
-.bold-text {
-    font-weight: bold;
 }
 
 
 
-/* .main-chat .message .date {
+
+.main-chat .message .date {
     position:absolute;
-    right: 0.5em;
-    bottom: 0.5em
-} */
+    right: 0;
+    bottom: 0;
+    font-size: 0.6em;
+    padding: 0.6em;
+    color: black;
+}
+
+
 
 .user {
     display: flex;
@@ -157,7 +158,6 @@ button {
 }
 
 
-
 .circle {
     background-color: white;
     width: 3em;
@@ -197,8 +197,8 @@ button {
 .control-chat input {
     flex-grow: 1;
     align-items: center;
-
 }
+
 
 .control-chat button {
     margin-right: 2em;
@@ -207,16 +207,12 @@ button {
     background-color: transparent;
     cursor: pointer;
     align-items: center;
-
 }
 
 
 .chat-list {
     flex-grow: 1;
     overflow-y: auto;
-}
-
-.chat-list {
     list-style: none;
 }
 
@@ -225,6 +221,10 @@ button {
     background-color: white;
     cursor: pointer;
     display: flex;
+}
+
+.chat-list .active {
+    background:rgba(1,1,1,0.4);
 }
 
 .contact .text-box {
@@ -239,6 +239,12 @@ button {
     color: lightgray;
     padding-top: 0.5em;
     font-size: 0.8em;
+}
+
+/* REUSED */
+
+.bold-text {
+    font-weight: bold;
 }
 
 .pic {

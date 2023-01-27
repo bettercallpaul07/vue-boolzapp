@@ -61,7 +61,11 @@
                     </div>
                     <div class="chat-list">
                         <ul>
-                            <li class="contact active" v-for="contact in contacts">
+                            <li class="contact" v-for="(contact,index) in contacts"
+                            :class="{
+                                'sent': (currenContact == index)
+                            }"
+                            @click = "ContactChose(index)">
                                 <img class="pic" :src="'img/avatar' + contact.avatar + '.jpg'">
                                 <div class="text-box">
                                     <p class="name">{{contact.name}}</p>
@@ -79,19 +83,28 @@
             <div class="chat-container col-8">
                 <div class="header-chat d-flex">
                     <div class="user">
-                        <img src="img/avatar_6.jpg" alt="User">
+                        <img :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="User">
                         <div>
-                            <div class="utext">Valeria</div>
+                            <div class="utext">{{contacts[currentContact].name}}</div>
                             <div class="lastaccess">Ultimo accesso oggi alle 15:00</div>
                         </div>
 
                     </div>
                 </div>
                 <div class="main-chat p-4">
-                    <div class="message sent">
-                        <p>Provaaaaaaaaaaaa</p>
+                    <div class="message" v-for="singleMessage in contacts[currentContact].messages"
+                    :class="singleMessage.status">
+
+                    <!-- Soluzione alternativa
+                    :class="{
+                        'sent': singleMessage.status == "sent"
+                        'received': singleMessage.status == "received"
+                    }" -->
+
+
+                        <p>{{singleMessage.message}}</p>
                         <div class="date">
-                            12:00
+                            {{singleMessage.date}}
                         </div>
                     </div>
 

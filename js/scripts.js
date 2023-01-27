@@ -173,5 +173,11 @@ createApp({
     
     methods: {
 
+      ContactChose(i){
+        console.log("cambio");
+        this.currentContact = i;
+
+      }
+
     }
   }).mount('#app');

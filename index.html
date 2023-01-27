@@ -108,23 +108,12 @@
                         </div>
                     </div>
 
-                    <div class="message received">
-                        <p>Olè
-                        </p>
-                        <div class="date">
-                            12:00
-                        </div>
-                    </div>
-               
-
-
-
                 </div>
                 <div class="control-chat">
                     <button>
                         <i class="fa-regular fa-face-smile fa-xl"></i>
                     </button>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio" v-model="newMessageText">
                     <button>
                         <i class="fa-solid fa-microphone fa-xl"></i>
                     </button>

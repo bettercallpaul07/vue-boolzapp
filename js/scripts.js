@@ -4,6 +4,8 @@ createApp({
     data() {
       return {
         currentContact: 0,
+        newMessageText: "",
+        
         contacts: [
             {
             name: 'Michele',
@@ -177,7 +179,45 @@ createApp({
         console.log("cambio");
         this.currentContact = i;
 
-      }
+      },
+
+      sendMessage() {
+
+        const newMessage = {
+          date: '10/01/2020 15:51:00',
+          message: this.newMessageText,
+          status: 'sent'
+        };
+
+        this.contacts[this.currentContact].messages.push(newMessage);
+        this.newMessageText = "";
+
+        
+      // Versione1
+      // setTimeout(this.replyMessage,1000)
+      // oppure
+      // setTimeout(() => {
+      //   this.replyMessage();
+      // }, 1000);
+      // Versione3 usiamo self per ereditare il this della funzione sendMessage
+
+      const self = this;
+      setTimeout(function() {
+        self.replyMessage();
+      }, 1000);
+      },
+
+      replyMessage()
+      {
+        const reply = {
+          date: '10/01/2020 15:52:00',
+          message: "Ok",
+          status: 'received'
+        };
+
+        this.contacts[this.currentContact].messages.push(reply);
+      },
+
 
     }
   }).mount('#app');

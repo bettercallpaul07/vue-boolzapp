@@ -4,6 +4,7 @@ createApp({
     data() {
       return {
         currentContact: 0,
+        searchValue: "",
         newMessageText: "",
         
         contacts: [
@@ -183,8 +184,10 @@ createApp({
 
       sendMessage() {
 
+        const dt = luxon.DateTime;
+
         const newMessage = {
-          date: '10/01/2020 15:51:00',
+          date: dt.now().toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
           message: this.newMessageText,
           status: 'sent'
         };
@@ -218,6 +221,11 @@ createApp({
         this.contacts[this.currentContact].messages.push(reply);
       },
 
+      getSearchValue(contact) {
+        if (contact.name.toLowerCase().includes(this.searchValue.toLowerCase())) return true;
+    },
 
-    }
+
+    },
+
   }).mount('#app');

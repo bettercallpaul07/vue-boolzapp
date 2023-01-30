@@ -17,6 +17,7 @@ body {
     align-items: center;
 }
 
+
 .main-container {
     height: 80%;
     width: 80%;
@@ -24,49 +25,162 @@ body {
     display: flex;
 }
 
-/* LATERAL SIDE */
+
+
+/* SIDE CONTAINER */
+
+
 
 .side-container {
     background-color: white;
+    width: 35%;
 }
 
-.header-side {
+
+.side-container .header-side {
     height: 10%;
     width: 100%;
     background-color: lightgray;
     display: flex;
     justify-content: space-between;
-    
 }
 
-.notification-side {
+
+
+
+.side-container .header-side .button-box {
+    display: flex;
+}
+
+
+.side-container .header-side .button-box i {
+    color: gray;
+    padding-right: 0.3em;
+    padding-left: 0.3em;
+}
+
+
+.side-container .notification-side {
     background-color: lightblue;
     height: 10%;
     width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 0.5em;
-
 }
+
+
+.side-container .chat-side .search-box {
+    padding: 1em;
+}
+
+
+.side-container .chat-side .search-box .search-container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 0.5em;
+}
+
+
+.side-container .chat-side .search-box .search-container input {
+    padding: 0.5em 0.5em;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+
+.side-container .chat-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    list-style: none;
+}
+
+
+.side-container .chat-list .contact {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+}
+
+
+.side-container .chat-list .active {
+    background-color:rgba(1,1,1,0.4);
+}
+
+
+.side-container .chat-list .contact .text-box {
+    width: 100%;
+}
+
+
+.side-container .chat-list .contact .text-box .name {
+    font-weight: bold;
+}
+
+
+.side-container .chat-list .contact .text-box .text {
+    color: lightgray;
+    padding-top: 0.5em;
+    font-size: 0.8em;
+}
+
+
+.side-container .notification-side {
+    display: flex;
+    align-items: center;
+}
+
+
+.side-container .notification-side .notification-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.2em;
+}
+
+
+.side-container .notification-side .circle {
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    color: lightblue;
+}
+
 
 
 /* CHAT SIDE */
 
 
-.header-chat {
+
+.chat-container {
+    width: 65%;
+    height: 100%;
+}
+
+
+.chat-container .header-chat {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    background-color: lightgray;
+}
+
+
+.chat-container .control-chat {
     height: 10%;
     width: 100%;
     background-color: lightgray;
 }
 
-.control-chat {
-    height: 10%;
-    width: 100%;
-    background-color: lightgray;
-}
 
-
-.main-chat {
+.chat-container .main-chat {
     height: 80%;
     width: 100%;
     padding: 2em;
@@ -78,7 +192,8 @@ body {
     overflow-y: auto;
 }
 
-.main-chat .message {
+
+.chat-container .main-chat .message {
     margin-bottom: 2em;
     padding: 1.5em;
     max-width: 60%;
@@ -87,19 +202,19 @@ body {
     position: relative;
 }
 
-.main-chat .sent {
+
+.chat-container .main-chat .sent {
     background-color: #d5f9ba;
     align-self: flex-end;
 }
 
-.main-chat .received {
+
+.chat-container .main-chat .received {
     background-color: white;
 }
 
 
-
-
-.main-chat .message .date {
+.chat-container .main-chat .message .date {
     position:absolute;
     right: 0;
     bottom: 0;
@@ -109,98 +224,33 @@ body {
 }
 
 
-
-.user {
+.chat-container .user {
     display: flex;
     align-items: center;
 }
 
-.header-side img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-.header-chat .user img {
-    width: 30%;
-    height: 100%;
-    border-radius: 50%;
-    padding: 10px;
-}
-
-.utext {
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-.lastaccess {
+.chat-container .header-chat .user .lastaccess {
     padding-top: 0.3em;
     font-size: 0.7em;
     color: gray;
 }
 
-.button-box {
-    display: flex;
-}
 
-.button-box i {
-    color: gray;
-    padding-right: 0.3em;
-    padding-left: 0.3em;
-}
-
-button {
-    background: none;
-	border: none;
-	padding: 0;
-	cursor: pointer;
-}
-
-
-.circle {
-    background-color: white;
-    width: 3em;
-    height: 3em;
-    line-height: 3em;
-    border-radius: 50%;
-    text-align: center;
-    color: lightblue;
-}
-
-.chat-side .search-box {
-    padding: 1em;
-}
-
-.chat-side .search-box .search-container {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    border: 1px solid lightgray;
-    padding: 0.5em;
-}
-
-.chat-side .search-container input {
-    padding: 0.5em 0.5em;
-    border: none;
-    outline: none;
-    flex-grow: 1;
-}
-
-
-.control-chat {
-    padding: 0.5em 0.5em;
+.chat-container .control-chat {
+    padding: 1em 1em;
     background-color: #f3eeea;
     display: flex;
 }
 
-.control-chat input {
+
+.chat-container .control-chat input {
     flex-grow: 1;
     align-items: center;
+    padding: 1em 0.5em;
 }
 
 
-.control-chat button {
+.chat-container .control-chat button {
     margin-right: 2em;
     margin-left: 2em;
     border: none;
@@ -210,46 +260,44 @@ button {
 }
 
 
-.chat-list {
-    flex-grow: 1;
-    overflow-y: auto;
-    list-style: none;
-}
-
-.contact {
-    padding: 0.5rem 1rem;
-    background-color: white;
-    cursor: pointer;
-    display: flex;
-}
-
-.chat-list .active {
-    background:rgba(1,1,1,0.4);
-}
-
-.contact .text-box {
-    width: 100%;
-}
-
-.contact .text-box .name {
-    font-weight: bold;
-}
-
-.contact .text-box .text {
-    color: lightgray;
-    padding-top: 0.5em;
-    font-size: 0.8em;
-}
 
 /* REUSED */
 
-.bold-text {
-    font-weight: bold;
+.user {
+    display: flex;
+    align-items: center;
+    padding: 1em;
 }
+
+
+
+.username-text {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+.small-text {
+    font-size: 0.8em;
+}
+
+
+.vsmall-text {
+    font-size: 0.7em;
+}
+
 
 .pic {
         margin-right: 1em;
         width: 3em;
         border-radius: 50%;
         display: block;
+}
+
+
+button {
+    background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 }

@@ -6,9 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boolzapp</title>
 
-        <!-- Importo Bootstrap -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
-    
         <!-- Importo Google Font e Roboto -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,15 +19,18 @@
 
         <!-- Importo Vue.js -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <!-- Importo Luxon -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.2.1/luxon.min.js" integrity="sha512-pyR2hpC7bLig9Ub4eUIOC/BAO4anpdt7jhpF4dfrPv+qIg+KWztdVjFPCRCsRaWVfUylUCvrrxqMFNrJBdQIjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
     <body id="app">
-        <div class="main-container mt-4">
-            <div class="side-container col-4">
+        <div class="main-container">
+            <div class="side-container">
                 <div class="header-side">
                     <div class="user">
-                        <img src="img/avatar_2.jpg" alt="User">
-                        <span class="utext">Paolo</span>
+                        <img class="pic" src="img/avatar_2.jpg" alt="User">
+                        <div class="username-text">Paolo</div>
                     </div>
                     <div class="button-box">
                         <button><i class="fa-solid fa-circle-notch fa-xl"></i></button>
@@ -38,12 +38,12 @@
                         <button><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></button>
                     </div>
                 </div>
-                <div class="notification-side d-flex align-items-center">
+                <div class="notification-side">
                     <div class="circle">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
-                    <div class="notification-box d-flex flex-column justify-content-center ps-2">
-                        <p class="bold-text pb-1">Ricevi notifiche di nuovi messaggi</p>
+                    <div class="notification-box">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
                         <p>
                             <a href="#">Attiva notifiche desktop</a>
                         </p>
@@ -54,7 +54,7 @@
                     <div class="search-box">
                         <div class="search-container">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchValue">
                         </div>
 
 
@@ -62,10 +62,11 @@
                     <div class="chat-list">
                         <ul>
                             <li class="contact" v-for="(contact,index) in contacts"
+                            @click = "ContactChose(index)"
                             :class="{
-                                'sent': (currenContact == index)
+                                'active': (currenContact == index)
                             }"
-                            @click = "ContactChose(index)">
+                            v-show="getSearchValue(contact)">
                                 <img class="pic" :src="'img/avatar' + contact.avatar + '.jpg'">
                                 <div class="text-box">
                                     <p class="name">{{contact.name}}</p>
@@ -80,28 +81,20 @@
 
 
             </div>
-            <div class="chat-container col-8">
-                <div class="header-chat d-flex">
+            <div class="chat-container">
+                <div class="header-chat">
                     <div class="user">
-                        <img :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="User">
+                        <img class="pic" :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="User">
                         <div>
-                            <div class="utext">{{contacts[currentContact].name}}</div>
+                            <div class="username-text">{{contacts[currentContact].name}}</div>
                             <div class="lastaccess">Ultimo accesso oggi alle 15:00</div>
                         </div>
 
                     </div>
                 </div>
-                <div class="main-chat p-4">
+                <div class="main-chat">
                     <div class="message" v-for="singleMessage in contacts[currentContact].messages"
                     :class="singleMessage.status">
-
-                    <!-- Soluzione alternativa
-                    :class="{
-                        'sent': singleMessage.status == "sent"
-                        'received': singleMessage.status == "received"
-                    }" -->
-
-
                         <p>{{singleMessage.message}}</p>
                         <div class="date">
                             {{singleMessage.date}}

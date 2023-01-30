@@ -6,6 +6,7 @@ createApp({
         currentContact: 0,
         searchValue: "",
         newMessageText: "",
+        isActive: false,
         
         contacts: [
             {

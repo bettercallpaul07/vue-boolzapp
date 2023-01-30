@@ -65,8 +65,7 @@
                             @click = "ContactChose(index)"
                             :class="{
                                 'active': (currenContact == index)
-                            }"
-                            v-show="getSearchValue(contact)">
+                            }">
                                 <img class="pic" :src="'img/avatar' + contact.avatar + '.jpg'">
                                 <div class="text-box">
                                     <p class="name">{{contact.name}}</p>
